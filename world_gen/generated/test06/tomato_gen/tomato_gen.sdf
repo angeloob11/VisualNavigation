@@ -1,0 +1,3248 @@
+<sdf version='1.7'>
+    <world name='field'>
+        <physics name='1ms' type='ignored'>
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>1000</real_time_update_rate>
+        </physics>
+        <plugin name='ignition::gazebo::systems::Physics' filename='ignition-gazebo-physics-system'/>
+        <plugin name='ignition::gazebo::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
+        <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
+        <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+        <scene>
+            <ambient>1 1 1 1</ambient>
+            <background>0.8 0.8 0.8 1</background>
+            <shadows>1</shadows>
+        </scene>
+        <light name='sun' type='directional'>
+            <cast_shadows>1</cast_shadows>
+            <pose>0 0 10 0 -0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+            <spot>
+                <inner_angle>0</inner_angle>
+                <outer_angle>0</outer_angle>
+                <falloff>0</falloff>
+            </spot>
+        </light>
+        <gravity>0 0 -9.8</gravity>
+        <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+        <atmosphere type='adiabatic'/>
+        
+        <include>
+            <uri>ground</uri>
+            <name>ground</name>
+            <pose>5.0 5.0 0 0 0 0</pose>
+        </include>
+
+        
+        <include>
+            <uri>tomato_0</uri>
+            <name>tomato_0</name>
+            <pose>0.0 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_1</uri>
+            <name>tomato_1</name>
+            <pose>0.0 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_2</uri>
+            <name>tomato_2</name>
+            <pose>0.0 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_3</uri>
+            <name>tomato_3</name>
+            <pose>0.0 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_4</uri>
+            <name>tomato_4</name>
+            <pose>0.0 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_5</uri>
+            <name>tomato_5</name>
+            <pose>0.0 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_6</uri>
+            <name>tomato_6</name>
+            <pose>0.0 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_7</uri>
+            <name>tomato_7</name>
+            <pose>0.0 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_8</uri>
+            <name>tomato_8</name>
+            <pose>0.0 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_9</uri>
+            <name>tomato_9</name>
+            <pose>0.0 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_10</uri>
+            <name>tomato_10</name>
+            <pose>0.0 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_11</uri>
+            <name>tomato_11</name>
+            <pose>0.0 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_12</uri>
+            <name>tomato_12</name>
+            <pose>0.0 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_13</uri>
+            <name>tomato_13</name>
+            <pose>0.0 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_14</uri>
+            <name>tomato_14</name>
+            <pose>0.0 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_15</uri>
+            <name>tomato_15</name>
+            <pose>0.0 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_16</uri>
+            <name>tomato_16</name>
+            <pose>0.0 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_17</uri>
+            <name>tomato_17</name>
+            <pose>0.0 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_18</uri>
+            <name>tomato_18</name>
+            <pose>0.0 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_19</uri>
+            <name>tomato_19</name>
+            <pose>0.0 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_20</uri>
+            <name>tomato_20</name>
+            <pose>0.0 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_21</uri>
+            <name>tomato_21</name>
+            <pose>0.0 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_22</uri>
+            <name>tomato_22</name>
+            <pose>0.0 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_23</uri>
+            <name>tomato_23</name>
+            <pose>0.0 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_24</uri>
+            <name>tomato_24</name>
+            <pose>0.0 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_25</uri>
+            <name>tomato_25</name>
+            <pose>0.0 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_26</uri>
+            <name>tomato_26</name>
+            <pose>0.0 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_27</uri>
+            <name>tomato_27</name>
+            <pose>0.0 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_28</uri>
+            <name>tomato_28</name>
+            <pose>0.0 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_29</uri>
+            <name>tomato_29</name>
+            <pose>0.0 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_30</uri>
+            <name>tomato_30</name>
+            <pose>0.0 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_31</uri>
+            <name>tomato_31</name>
+            <pose>0.0 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_32</uri>
+            <name>tomato_32</name>
+            <pose>0.0 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_33</uri>
+            <name>tomato_33</name>
+            <pose>0.3 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_34</uri>
+            <name>tomato_34</name>
+            <pose>0.3 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_35</uri>
+            <name>tomato_35</name>
+            <pose>0.3 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_36</uri>
+            <name>tomato_36</name>
+            <pose>0.3 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_37</uri>
+            <name>tomato_37</name>
+            <pose>0.3 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_38</uri>
+            <name>tomato_38</name>
+            <pose>0.3 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_39</uri>
+            <name>tomato_39</name>
+            <pose>0.3 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_40</uri>
+            <name>tomato_40</name>
+            <pose>0.3 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_41</uri>
+            <name>tomato_41</name>
+            <pose>0.3 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_42</uri>
+            <name>tomato_42</name>
+            <pose>0.3 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_43</uri>
+            <name>tomato_43</name>
+            <pose>0.3 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_44</uri>
+            <name>tomato_44</name>
+            <pose>0.3 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_45</uri>
+            <name>tomato_45</name>
+            <pose>0.3 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_46</uri>
+            <name>tomato_46</name>
+            <pose>0.3 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_47</uri>
+            <name>tomato_47</name>
+            <pose>0.3 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_48</uri>
+            <name>tomato_48</name>
+            <pose>0.3 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_49</uri>
+            <name>tomato_49</name>
+            <pose>0.3 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_50</uri>
+            <name>tomato_50</name>
+            <pose>0.3 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_51</uri>
+            <name>tomato_51</name>
+            <pose>0.3 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_52</uri>
+            <name>tomato_52</name>
+            <pose>0.3 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_53</uri>
+            <name>tomato_53</name>
+            <pose>0.3 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_54</uri>
+            <name>tomato_54</name>
+            <pose>0.3 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_55</uri>
+            <name>tomato_55</name>
+            <pose>0.3 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_56</uri>
+            <name>tomato_56</name>
+            <pose>0.3 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_57</uri>
+            <name>tomato_57</name>
+            <pose>0.3 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_58</uri>
+            <name>tomato_58</name>
+            <pose>0.3 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_59</uri>
+            <name>tomato_59</name>
+            <pose>0.3 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_60</uri>
+            <name>tomato_60</name>
+            <pose>0.3 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_61</uri>
+            <name>tomato_61</name>
+            <pose>0.3 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_62</uri>
+            <name>tomato_62</name>
+            <pose>0.3 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_63</uri>
+            <name>tomato_63</name>
+            <pose>0.3 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_64</uri>
+            <name>tomato_64</name>
+            <pose>0.3 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_65</uri>
+            <name>tomato_65</name>
+            <pose>0.3 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_66</uri>
+            <name>tomato_66</name>
+            <pose>2.8 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_67</uri>
+            <name>tomato_67</name>
+            <pose>2.8 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_68</uri>
+            <name>tomato_68</name>
+            <pose>2.8 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_69</uri>
+            <name>tomato_69</name>
+            <pose>2.8 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_70</uri>
+            <name>tomato_70</name>
+            <pose>2.8 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_71</uri>
+            <name>tomato_71</name>
+            <pose>2.8 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_72</uri>
+            <name>tomato_72</name>
+            <pose>2.8 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_73</uri>
+            <name>tomato_73</name>
+            <pose>2.8 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_74</uri>
+            <name>tomato_74</name>
+            <pose>2.8 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_75</uri>
+            <name>tomato_75</name>
+            <pose>2.8 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_76</uri>
+            <name>tomato_76</name>
+            <pose>2.8 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_77</uri>
+            <name>tomato_77</name>
+            <pose>2.8 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_78</uri>
+            <name>tomato_78</name>
+            <pose>2.8 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_79</uri>
+            <name>tomato_79</name>
+            <pose>2.8 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_80</uri>
+            <name>tomato_80</name>
+            <pose>2.8 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_81</uri>
+            <name>tomato_81</name>
+            <pose>2.8 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_82</uri>
+            <name>tomato_82</name>
+            <pose>2.8 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_83</uri>
+            <name>tomato_83</name>
+            <pose>2.8 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_84</uri>
+            <name>tomato_84</name>
+            <pose>2.8 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_85</uri>
+            <name>tomato_85</name>
+            <pose>2.8 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_86</uri>
+            <name>tomato_86</name>
+            <pose>2.8 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_87</uri>
+            <name>tomato_87</name>
+            <pose>2.8 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_88</uri>
+            <name>tomato_88</name>
+            <pose>2.8 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_89</uri>
+            <name>tomato_89</name>
+            <pose>2.8 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_90</uri>
+            <name>tomato_90</name>
+            <pose>2.8 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_91</uri>
+            <name>tomato_91</name>
+            <pose>2.8 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_92</uri>
+            <name>tomato_92</name>
+            <pose>2.8 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_93</uri>
+            <name>tomato_93</name>
+            <pose>2.8 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_94</uri>
+            <name>tomato_94</name>
+            <pose>2.8 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_95</uri>
+            <name>tomato_95</name>
+            <pose>2.8 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_96</uri>
+            <name>tomato_96</name>
+            <pose>2.8 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_97</uri>
+            <name>tomato_97</name>
+            <pose>2.8 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_98</uri>
+            <name>tomato_98</name>
+            <pose>2.8 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_99</uri>
+            <name>tomato_99</name>
+            <pose>3.0999999999999996 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_100</uri>
+            <name>tomato_100</name>
+            <pose>3.0999999999999996 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_101</uri>
+            <name>tomato_101</name>
+            <pose>3.0999999999999996 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_102</uri>
+            <name>tomato_102</name>
+            <pose>3.0999999999999996 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_103</uri>
+            <name>tomato_103</name>
+            <pose>3.0999999999999996 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_104</uri>
+            <name>tomato_104</name>
+            <pose>3.0999999999999996 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_105</uri>
+            <name>tomato_105</name>
+            <pose>3.0999999999999996 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_106</uri>
+            <name>tomato_106</name>
+            <pose>3.0999999999999996 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_107</uri>
+            <name>tomato_107</name>
+            <pose>3.0999999999999996 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_108</uri>
+            <name>tomato_108</name>
+            <pose>3.0999999999999996 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_109</uri>
+            <name>tomato_109</name>
+            <pose>3.0999999999999996 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_110</uri>
+            <name>tomato_110</name>
+            <pose>3.0999999999999996 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_111</uri>
+            <name>tomato_111</name>
+            <pose>3.0999999999999996 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_112</uri>
+            <name>tomato_112</name>
+            <pose>3.0999999999999996 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_113</uri>
+            <name>tomato_113</name>
+            <pose>3.0999999999999996 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_114</uri>
+            <name>tomato_114</name>
+            <pose>3.0999999999999996 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_115</uri>
+            <name>tomato_115</name>
+            <pose>3.0999999999999996 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_116</uri>
+            <name>tomato_116</name>
+            <pose>3.0999999999999996 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_117</uri>
+            <name>tomato_117</name>
+            <pose>3.0999999999999996 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_118</uri>
+            <name>tomato_118</name>
+            <pose>3.0999999999999996 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_119</uri>
+            <name>tomato_119</name>
+            <pose>3.0999999999999996 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_120</uri>
+            <name>tomato_120</name>
+            <pose>3.0999999999999996 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_121</uri>
+            <name>tomato_121</name>
+            <pose>3.0999999999999996 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_122</uri>
+            <name>tomato_122</name>
+            <pose>3.0999999999999996 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_123</uri>
+            <name>tomato_123</name>
+            <pose>3.0999999999999996 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_124</uri>
+            <name>tomato_124</name>
+            <pose>3.0999999999999996 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_125</uri>
+            <name>tomato_125</name>
+            <pose>3.0999999999999996 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_126</uri>
+            <name>tomato_126</name>
+            <pose>3.0999999999999996 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_127</uri>
+            <name>tomato_127</name>
+            <pose>3.0999999999999996 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_128</uri>
+            <name>tomato_128</name>
+            <pose>3.0999999999999996 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_129</uri>
+            <name>tomato_129</name>
+            <pose>3.0999999999999996 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_130</uri>
+            <name>tomato_130</name>
+            <pose>3.0999999999999996 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_131</uri>
+            <name>tomato_131</name>
+            <pose>3.0999999999999996 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_132</uri>
+            <name>tomato_132</name>
+            <pose>5.6 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_133</uri>
+            <name>tomato_133</name>
+            <pose>5.6 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_134</uri>
+            <name>tomato_134</name>
+            <pose>5.6 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_135</uri>
+            <name>tomato_135</name>
+            <pose>5.6 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_136</uri>
+            <name>tomato_136</name>
+            <pose>5.6 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_137</uri>
+            <name>tomato_137</name>
+            <pose>5.6 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_138</uri>
+            <name>tomato_138</name>
+            <pose>5.6 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_139</uri>
+            <name>tomato_139</name>
+            <pose>5.6 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_140</uri>
+            <name>tomato_140</name>
+            <pose>5.6 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_141</uri>
+            <name>tomato_141</name>
+            <pose>5.6 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_142</uri>
+            <name>tomato_142</name>
+            <pose>5.6 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_143</uri>
+            <name>tomato_143</name>
+            <pose>5.6 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_144</uri>
+            <name>tomato_144</name>
+            <pose>5.6 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_145</uri>
+            <name>tomato_145</name>
+            <pose>5.6 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_146</uri>
+            <name>tomato_146</name>
+            <pose>5.6 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_147</uri>
+            <name>tomato_147</name>
+            <pose>5.6 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_148</uri>
+            <name>tomato_148</name>
+            <pose>5.6 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_149</uri>
+            <name>tomato_149</name>
+            <pose>5.6 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_150</uri>
+            <name>tomato_150</name>
+            <pose>5.6 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_151</uri>
+            <name>tomato_151</name>
+            <pose>5.6 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_152</uri>
+            <name>tomato_152</name>
+            <pose>5.6 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_153</uri>
+            <name>tomato_153</name>
+            <pose>5.6 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_154</uri>
+            <name>tomato_154</name>
+            <pose>5.6 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_155</uri>
+            <name>tomato_155</name>
+            <pose>5.6 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_156</uri>
+            <name>tomato_156</name>
+            <pose>5.6 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_157</uri>
+            <name>tomato_157</name>
+            <pose>5.6 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_158</uri>
+            <name>tomato_158</name>
+            <pose>5.6 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_159</uri>
+            <name>tomato_159</name>
+            <pose>5.6 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_160</uri>
+            <name>tomato_160</name>
+            <pose>5.6 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_161</uri>
+            <name>tomato_161</name>
+            <pose>5.6 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_162</uri>
+            <name>tomato_162</name>
+            <pose>5.6 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_163</uri>
+            <name>tomato_163</name>
+            <pose>5.6 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_164</uri>
+            <name>tomato_164</name>
+            <pose>5.6 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_165</uri>
+            <name>tomato_165</name>
+            <pose>5.8999999999999995 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_166</uri>
+            <name>tomato_166</name>
+            <pose>5.8999999999999995 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_167</uri>
+            <name>tomato_167</name>
+            <pose>5.8999999999999995 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_168</uri>
+            <name>tomato_168</name>
+            <pose>5.8999999999999995 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_169</uri>
+            <name>tomato_169</name>
+            <pose>5.8999999999999995 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_170</uri>
+            <name>tomato_170</name>
+            <pose>5.8999999999999995 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_171</uri>
+            <name>tomato_171</name>
+            <pose>5.8999999999999995 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_172</uri>
+            <name>tomato_172</name>
+            <pose>5.8999999999999995 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_173</uri>
+            <name>tomato_173</name>
+            <pose>5.8999999999999995 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_174</uri>
+            <name>tomato_174</name>
+            <pose>5.8999999999999995 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_175</uri>
+            <name>tomato_175</name>
+            <pose>5.8999999999999995 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_176</uri>
+            <name>tomato_176</name>
+            <pose>5.8999999999999995 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_177</uri>
+            <name>tomato_177</name>
+            <pose>5.8999999999999995 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_178</uri>
+            <name>tomato_178</name>
+            <pose>5.8999999999999995 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_179</uri>
+            <name>tomato_179</name>
+            <pose>5.8999999999999995 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_180</uri>
+            <name>tomato_180</name>
+            <pose>5.8999999999999995 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_181</uri>
+            <name>tomato_181</name>
+            <pose>5.8999999999999995 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_182</uri>
+            <name>tomato_182</name>
+            <pose>5.8999999999999995 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_183</uri>
+            <name>tomato_183</name>
+            <pose>5.8999999999999995 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_184</uri>
+            <name>tomato_184</name>
+            <pose>5.8999999999999995 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_185</uri>
+            <name>tomato_185</name>
+            <pose>5.8999999999999995 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_186</uri>
+            <name>tomato_186</name>
+            <pose>5.8999999999999995 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_187</uri>
+            <name>tomato_187</name>
+            <pose>5.8999999999999995 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_188</uri>
+            <name>tomato_188</name>
+            <pose>5.8999999999999995 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_189</uri>
+            <name>tomato_189</name>
+            <pose>5.8999999999999995 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_190</uri>
+            <name>tomato_190</name>
+            <pose>5.8999999999999995 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_191</uri>
+            <name>tomato_191</name>
+            <pose>5.8999999999999995 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_192</uri>
+            <name>tomato_192</name>
+            <pose>5.8999999999999995 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_193</uri>
+            <name>tomato_193</name>
+            <pose>5.8999999999999995 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_194</uri>
+            <name>tomato_194</name>
+            <pose>5.8999999999999995 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_195</uri>
+            <name>tomato_195</name>
+            <pose>5.8999999999999995 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_196</uri>
+            <name>tomato_196</name>
+            <pose>5.8999999999999995 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_197</uri>
+            <name>tomato_197</name>
+            <pose>5.8999999999999995 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_198</uri>
+            <name>tomato_198</name>
+            <pose>8.399999999999999 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_199</uri>
+            <name>tomato_199</name>
+            <pose>8.399999999999999 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_200</uri>
+            <name>tomato_200</name>
+            <pose>8.399999999999999 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_201</uri>
+            <name>tomato_201</name>
+            <pose>8.399999999999999 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_202</uri>
+            <name>tomato_202</name>
+            <pose>8.399999999999999 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_203</uri>
+            <name>tomato_203</name>
+            <pose>8.399999999999999 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_204</uri>
+            <name>tomato_204</name>
+            <pose>8.399999999999999 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_205</uri>
+            <name>tomato_205</name>
+            <pose>8.399999999999999 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_206</uri>
+            <name>tomato_206</name>
+            <pose>8.399999999999999 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_207</uri>
+            <name>tomato_207</name>
+            <pose>8.399999999999999 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_208</uri>
+            <name>tomato_208</name>
+            <pose>8.399999999999999 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_209</uri>
+            <name>tomato_209</name>
+            <pose>8.399999999999999 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_210</uri>
+            <name>tomato_210</name>
+            <pose>8.399999999999999 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_211</uri>
+            <name>tomato_211</name>
+            <pose>8.399999999999999 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_212</uri>
+            <name>tomato_212</name>
+            <pose>8.399999999999999 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_213</uri>
+            <name>tomato_213</name>
+            <pose>8.399999999999999 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_214</uri>
+            <name>tomato_214</name>
+            <pose>8.399999999999999 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_215</uri>
+            <name>tomato_215</name>
+            <pose>8.399999999999999 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_216</uri>
+            <name>tomato_216</name>
+            <pose>8.399999999999999 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_217</uri>
+            <name>tomato_217</name>
+            <pose>8.399999999999999 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_218</uri>
+            <name>tomato_218</name>
+            <pose>8.399999999999999 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_219</uri>
+            <name>tomato_219</name>
+            <pose>8.399999999999999 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_220</uri>
+            <name>tomato_220</name>
+            <pose>8.399999999999999 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_221</uri>
+            <name>tomato_221</name>
+            <pose>8.399999999999999 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_222</uri>
+            <name>tomato_222</name>
+            <pose>8.399999999999999 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_223</uri>
+            <name>tomato_223</name>
+            <pose>8.399999999999999 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_224</uri>
+            <name>tomato_224</name>
+            <pose>8.399999999999999 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_225</uri>
+            <name>tomato_225</name>
+            <pose>8.399999999999999 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_226</uri>
+            <name>tomato_226</name>
+            <pose>8.399999999999999 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_227</uri>
+            <name>tomato_227</name>
+            <pose>8.399999999999999 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_228</uri>
+            <name>tomato_228</name>
+            <pose>8.399999999999999 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_229</uri>
+            <name>tomato_229</name>
+            <pose>8.399999999999999 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_230</uri>
+            <name>tomato_230</name>
+            <pose>8.399999999999999 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_231</uri>
+            <name>tomato_231</name>
+            <pose>8.7 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_232</uri>
+            <name>tomato_232</name>
+            <pose>8.7 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_233</uri>
+            <name>tomato_233</name>
+            <pose>8.7 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_234</uri>
+            <name>tomato_234</name>
+            <pose>8.7 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_235</uri>
+            <name>tomato_235</name>
+            <pose>8.7 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_236</uri>
+            <name>tomato_236</name>
+            <pose>8.7 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_237</uri>
+            <name>tomato_237</name>
+            <pose>8.7 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_238</uri>
+            <name>tomato_238</name>
+            <pose>8.7 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_239</uri>
+            <name>tomato_239</name>
+            <pose>8.7 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_240</uri>
+            <name>tomato_240</name>
+            <pose>8.7 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_241</uri>
+            <name>tomato_241</name>
+            <pose>8.7 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_242</uri>
+            <name>tomato_242</name>
+            <pose>8.7 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_243</uri>
+            <name>tomato_243</name>
+            <pose>8.7 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_244</uri>
+            <name>tomato_244</name>
+            <pose>8.7 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_245</uri>
+            <name>tomato_245</name>
+            <pose>8.7 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_246</uri>
+            <name>tomato_246</name>
+            <pose>8.7 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_247</uri>
+            <name>tomato_247</name>
+            <pose>8.7 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_248</uri>
+            <name>tomato_248</name>
+            <pose>8.7 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_249</uri>
+            <name>tomato_249</name>
+            <pose>8.7 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_250</uri>
+            <name>tomato_250</name>
+            <pose>8.7 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_251</uri>
+            <name>tomato_251</name>
+            <pose>8.7 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_252</uri>
+            <name>tomato_252</name>
+            <pose>8.7 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_253</uri>
+            <name>tomato_253</name>
+            <pose>8.7 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_254</uri>
+            <name>tomato_254</name>
+            <pose>8.7 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_255</uri>
+            <name>tomato_255</name>
+            <pose>8.7 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_256</uri>
+            <name>tomato_256</name>
+            <pose>8.7 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_257</uri>
+            <name>tomato_257</name>
+            <pose>8.7 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_258</uri>
+            <name>tomato_258</name>
+            <pose>8.7 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_259</uri>
+            <name>tomato_259</name>
+            <pose>8.7 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_260</uri>
+            <name>tomato_260</name>
+            <pose>8.7 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_261</uri>
+            <name>tomato_261</name>
+            <pose>8.7 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_262</uri>
+            <name>tomato_262</name>
+            <pose>8.7 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_263</uri>
+            <name>tomato_263</name>
+            <pose>8.7 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_264</uri>
+            <name>tomato_264</name>
+            <pose>11.2 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_265</uri>
+            <name>tomato_265</name>
+            <pose>11.2 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_266</uri>
+            <name>tomato_266</name>
+            <pose>11.2 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_267</uri>
+            <name>tomato_267</name>
+            <pose>11.2 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_268</uri>
+            <name>tomato_268</name>
+            <pose>11.2 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_269</uri>
+            <name>tomato_269</name>
+            <pose>11.2 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_270</uri>
+            <name>tomato_270</name>
+            <pose>11.2 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_271</uri>
+            <name>tomato_271</name>
+            <pose>11.2 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_272</uri>
+            <name>tomato_272</name>
+            <pose>11.2 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_273</uri>
+            <name>tomato_273</name>
+            <pose>11.2 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_274</uri>
+            <name>tomato_274</name>
+            <pose>11.2 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_275</uri>
+            <name>tomato_275</name>
+            <pose>11.2 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_276</uri>
+            <name>tomato_276</name>
+            <pose>11.2 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_277</uri>
+            <name>tomato_277</name>
+            <pose>11.2 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_278</uri>
+            <name>tomato_278</name>
+            <pose>11.2 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_279</uri>
+            <name>tomato_279</name>
+            <pose>11.2 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_280</uri>
+            <name>tomato_280</name>
+            <pose>11.2 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_281</uri>
+            <name>tomato_281</name>
+            <pose>11.2 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_282</uri>
+            <name>tomato_282</name>
+            <pose>11.2 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_283</uri>
+            <name>tomato_283</name>
+            <pose>11.2 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_284</uri>
+            <name>tomato_284</name>
+            <pose>11.2 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_285</uri>
+            <name>tomato_285</name>
+            <pose>11.2 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_286</uri>
+            <name>tomato_286</name>
+            <pose>11.2 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_287</uri>
+            <name>tomato_287</name>
+            <pose>11.2 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_288</uri>
+            <name>tomato_288</name>
+            <pose>11.2 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_289</uri>
+            <name>tomato_289</name>
+            <pose>11.2 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_290</uri>
+            <name>tomato_290</name>
+            <pose>11.2 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_291</uri>
+            <name>tomato_291</name>
+            <pose>11.2 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_292</uri>
+            <name>tomato_292</name>
+            <pose>11.2 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_293</uri>
+            <name>tomato_293</name>
+            <pose>11.2 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_294</uri>
+            <name>tomato_294</name>
+            <pose>11.2 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_295</uri>
+            <name>tomato_295</name>
+            <pose>11.2 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_296</uri>
+            <name>tomato_296</name>
+            <pose>11.2 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_297</uri>
+            <name>tomato_297</name>
+            <pose>11.5 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_298</uri>
+            <name>tomato_298</name>
+            <pose>11.5 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_299</uri>
+            <name>tomato_299</name>
+            <pose>11.5 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_300</uri>
+            <name>tomato_300</name>
+            <pose>11.5 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_301</uri>
+            <name>tomato_301</name>
+            <pose>11.5 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_302</uri>
+            <name>tomato_302</name>
+            <pose>11.5 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_303</uri>
+            <name>tomato_303</name>
+            <pose>11.5 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_304</uri>
+            <name>tomato_304</name>
+            <pose>11.5 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_305</uri>
+            <name>tomato_305</name>
+            <pose>11.5 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_306</uri>
+            <name>tomato_306</name>
+            <pose>11.5 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_307</uri>
+            <name>tomato_307</name>
+            <pose>11.5 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_308</uri>
+            <name>tomato_308</name>
+            <pose>11.5 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_309</uri>
+            <name>tomato_309</name>
+            <pose>11.5 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_310</uri>
+            <name>tomato_310</name>
+            <pose>11.5 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_311</uri>
+            <name>tomato_311</name>
+            <pose>11.5 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_312</uri>
+            <name>tomato_312</name>
+            <pose>11.5 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_313</uri>
+            <name>tomato_313</name>
+            <pose>11.5 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_314</uri>
+            <name>tomato_314</name>
+            <pose>11.5 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_315</uri>
+            <name>tomato_315</name>
+            <pose>11.5 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_316</uri>
+            <name>tomato_316</name>
+            <pose>11.5 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_317</uri>
+            <name>tomato_317</name>
+            <pose>11.5 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_318</uri>
+            <name>tomato_318</name>
+            <pose>11.5 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_319</uri>
+            <name>tomato_319</name>
+            <pose>11.5 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_320</uri>
+            <name>tomato_320</name>
+            <pose>11.5 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_321</uri>
+            <name>tomato_321</name>
+            <pose>11.5 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_322</uri>
+            <name>tomato_322</name>
+            <pose>11.5 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_323</uri>
+            <name>tomato_323</name>
+            <pose>11.5 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_324</uri>
+            <name>tomato_324</name>
+            <pose>11.5 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_325</uri>
+            <name>tomato_325</name>
+            <pose>11.5 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_326</uri>
+            <name>tomato_326</name>
+            <pose>11.5 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_327</uri>
+            <name>tomato_327</name>
+            <pose>11.5 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_328</uri>
+            <name>tomato_328</name>
+            <pose>11.5 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_329</uri>
+            <name>tomato_329</name>
+            <pose>11.5 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_330</uri>
+            <name>tomato_330</name>
+            <pose>14.0 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_331</uri>
+            <name>tomato_331</name>
+            <pose>14.0 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_332</uri>
+            <name>tomato_332</name>
+            <pose>14.0 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_333</uri>
+            <name>tomato_333</name>
+            <pose>14.0 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_334</uri>
+            <name>tomato_334</name>
+            <pose>14.0 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_335</uri>
+            <name>tomato_335</name>
+            <pose>14.0 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_336</uri>
+            <name>tomato_336</name>
+            <pose>14.0 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_337</uri>
+            <name>tomato_337</name>
+            <pose>14.0 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_338</uri>
+            <name>tomato_338</name>
+            <pose>14.0 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_339</uri>
+            <name>tomato_339</name>
+            <pose>14.0 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_340</uri>
+            <name>tomato_340</name>
+            <pose>14.0 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_341</uri>
+            <name>tomato_341</name>
+            <pose>14.0 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_342</uri>
+            <name>tomato_342</name>
+            <pose>14.0 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_343</uri>
+            <name>tomato_343</name>
+            <pose>14.0 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_344</uri>
+            <name>tomato_344</name>
+            <pose>14.0 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_345</uri>
+            <name>tomato_345</name>
+            <pose>14.0 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_346</uri>
+            <name>tomato_346</name>
+            <pose>14.0 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_347</uri>
+            <name>tomato_347</name>
+            <pose>14.0 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_348</uri>
+            <name>tomato_348</name>
+            <pose>14.0 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_349</uri>
+            <name>tomato_349</name>
+            <pose>14.0 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_350</uri>
+            <name>tomato_350</name>
+            <pose>14.0 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_351</uri>
+            <name>tomato_351</name>
+            <pose>14.0 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_352</uri>
+            <name>tomato_352</name>
+            <pose>14.0 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_353</uri>
+            <name>tomato_353</name>
+            <pose>14.0 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_354</uri>
+            <name>tomato_354</name>
+            <pose>14.0 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_355</uri>
+            <name>tomato_355</name>
+            <pose>14.0 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_356</uri>
+            <name>tomato_356</name>
+            <pose>14.0 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_357</uri>
+            <name>tomato_357</name>
+            <pose>14.0 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_358</uri>
+            <name>tomato_358</name>
+            <pose>14.0 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_359</uri>
+            <name>tomato_359</name>
+            <pose>14.0 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_360</uri>
+            <name>tomato_360</name>
+            <pose>14.0 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_361</uri>
+            <name>tomato_361</name>
+            <pose>14.0 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_362</uri>
+            <name>tomato_362</name>
+            <pose>14.0 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_363</uri>
+            <name>tomato_363</name>
+            <pose>14.3 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_364</uri>
+            <name>tomato_364</name>
+            <pose>14.3 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_365</uri>
+            <name>tomato_365</name>
+            <pose>14.3 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_366</uri>
+            <name>tomato_366</name>
+            <pose>14.3 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_367</uri>
+            <name>tomato_367</name>
+            <pose>14.3 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_368</uri>
+            <name>tomato_368</name>
+            <pose>14.3 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_369</uri>
+            <name>tomato_369</name>
+            <pose>14.3 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_370</uri>
+            <name>tomato_370</name>
+            <pose>14.3 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_371</uri>
+            <name>tomato_371</name>
+            <pose>14.3 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_372</uri>
+            <name>tomato_372</name>
+            <pose>14.3 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_373</uri>
+            <name>tomato_373</name>
+            <pose>14.3 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_374</uri>
+            <name>tomato_374</name>
+            <pose>14.3 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_375</uri>
+            <name>tomato_375</name>
+            <pose>14.3 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_376</uri>
+            <name>tomato_376</name>
+            <pose>14.3 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_377</uri>
+            <name>tomato_377</name>
+            <pose>14.3 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_378</uri>
+            <name>tomato_378</name>
+            <pose>14.3 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_379</uri>
+            <name>tomato_379</name>
+            <pose>14.3 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_380</uri>
+            <name>tomato_380</name>
+            <pose>14.3 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_381</uri>
+            <name>tomato_381</name>
+            <pose>14.3 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_382</uri>
+            <name>tomato_382</name>
+            <pose>14.3 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_383</uri>
+            <name>tomato_383</name>
+            <pose>14.3 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_384</uri>
+            <name>tomato_384</name>
+            <pose>14.3 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_385</uri>
+            <name>tomato_385</name>
+            <pose>14.3 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_386</uri>
+            <name>tomato_386</name>
+            <pose>14.3 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_387</uri>
+            <name>tomato_387</name>
+            <pose>14.3 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_388</uri>
+            <name>tomato_388</name>
+            <pose>14.3 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_389</uri>
+            <name>tomato_389</name>
+            <pose>14.3 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_390</uri>
+            <name>tomato_390</name>
+            <pose>14.3 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_391</uri>
+            <name>tomato_391</name>
+            <pose>14.3 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_392</uri>
+            <name>tomato_392</name>
+            <pose>14.3 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_393</uri>
+            <name>tomato_393</name>
+            <pose>14.3 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_394</uri>
+            <name>tomato_394</name>
+            <pose>14.3 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_395</uri>
+            <name>tomato_395</name>
+            <pose>14.3 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_396</uri>
+            <name>tomato_396</name>
+            <pose>16.799999999999997 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_397</uri>
+            <name>tomato_397</name>
+            <pose>16.799999999999997 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_398</uri>
+            <name>tomato_398</name>
+            <pose>16.799999999999997 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_399</uri>
+            <name>tomato_399</name>
+            <pose>16.799999999999997 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_400</uri>
+            <name>tomato_400</name>
+            <pose>16.799999999999997 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_401</uri>
+            <name>tomato_401</name>
+            <pose>16.799999999999997 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_402</uri>
+            <name>tomato_402</name>
+            <pose>16.799999999999997 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_403</uri>
+            <name>tomato_403</name>
+            <pose>16.799999999999997 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_404</uri>
+            <name>tomato_404</name>
+            <pose>16.799999999999997 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_405</uri>
+            <name>tomato_405</name>
+            <pose>16.799999999999997 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_406</uri>
+            <name>tomato_406</name>
+            <pose>16.799999999999997 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_407</uri>
+            <name>tomato_407</name>
+            <pose>16.799999999999997 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_408</uri>
+            <name>tomato_408</name>
+            <pose>16.799999999999997 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_409</uri>
+            <name>tomato_409</name>
+            <pose>16.799999999999997 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_410</uri>
+            <name>tomato_410</name>
+            <pose>16.799999999999997 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_411</uri>
+            <name>tomato_411</name>
+            <pose>16.799999999999997 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_412</uri>
+            <name>tomato_412</name>
+            <pose>16.799999999999997 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_413</uri>
+            <name>tomato_413</name>
+            <pose>16.799999999999997 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_414</uri>
+            <name>tomato_414</name>
+            <pose>16.799999999999997 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_415</uri>
+            <name>tomato_415</name>
+            <pose>16.799999999999997 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_416</uri>
+            <name>tomato_416</name>
+            <pose>16.799999999999997 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_417</uri>
+            <name>tomato_417</name>
+            <pose>16.799999999999997 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_418</uri>
+            <name>tomato_418</name>
+            <pose>16.799999999999997 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_419</uri>
+            <name>tomato_419</name>
+            <pose>16.799999999999997 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_420</uri>
+            <name>tomato_420</name>
+            <pose>16.799999999999997 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_421</uri>
+            <name>tomato_421</name>
+            <pose>16.799999999999997 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_422</uri>
+            <name>tomato_422</name>
+            <pose>16.799999999999997 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_423</uri>
+            <name>tomato_423</name>
+            <pose>16.799999999999997 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_424</uri>
+            <name>tomato_424</name>
+            <pose>16.799999999999997 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_425</uri>
+            <name>tomato_425</name>
+            <pose>16.799999999999997 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_426</uri>
+            <name>tomato_426</name>
+            <pose>16.799999999999997 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_427</uri>
+            <name>tomato_427</name>
+            <pose>16.799999999999997 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_428</uri>
+            <name>tomato_428</name>
+            <pose>16.799999999999997 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_429</uri>
+            <name>tomato_429</name>
+            <pose>17.099999999999998 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_430</uri>
+            <name>tomato_430</name>
+            <pose>17.099999999999998 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_431</uri>
+            <name>tomato_431</name>
+            <pose>17.099999999999998 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_432</uri>
+            <name>tomato_432</name>
+            <pose>17.099999999999998 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_433</uri>
+            <name>tomato_433</name>
+            <pose>17.099999999999998 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_434</uri>
+            <name>tomato_434</name>
+            <pose>17.099999999999998 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_435</uri>
+            <name>tomato_435</name>
+            <pose>17.099999999999998 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_436</uri>
+            <name>tomato_436</name>
+            <pose>17.099999999999998 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_437</uri>
+            <name>tomato_437</name>
+            <pose>17.099999999999998 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_438</uri>
+            <name>tomato_438</name>
+            <pose>17.099999999999998 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_439</uri>
+            <name>tomato_439</name>
+            <pose>17.099999999999998 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_440</uri>
+            <name>tomato_440</name>
+            <pose>17.099999999999998 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_441</uri>
+            <name>tomato_441</name>
+            <pose>17.099999999999998 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_442</uri>
+            <name>tomato_442</name>
+            <pose>17.099999999999998 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_443</uri>
+            <name>tomato_443</name>
+            <pose>17.099999999999998 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_444</uri>
+            <name>tomato_444</name>
+            <pose>17.099999999999998 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_445</uri>
+            <name>tomato_445</name>
+            <pose>17.099999999999998 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_446</uri>
+            <name>tomato_446</name>
+            <pose>17.099999999999998 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_447</uri>
+            <name>tomato_447</name>
+            <pose>17.099999999999998 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_448</uri>
+            <name>tomato_448</name>
+            <pose>17.099999999999998 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_449</uri>
+            <name>tomato_449</name>
+            <pose>17.099999999999998 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_450</uri>
+            <name>tomato_450</name>
+            <pose>17.099999999999998 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_451</uri>
+            <name>tomato_451</name>
+            <pose>17.099999999999998 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_452</uri>
+            <name>tomato_452</name>
+            <pose>17.099999999999998 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_453</uri>
+            <name>tomato_453</name>
+            <pose>17.099999999999998 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_454</uri>
+            <name>tomato_454</name>
+            <pose>17.099999999999998 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_455</uri>
+            <name>tomato_455</name>
+            <pose>17.099999999999998 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_456</uri>
+            <name>tomato_456</name>
+            <pose>17.099999999999998 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_457</uri>
+            <name>tomato_457</name>
+            <pose>17.099999999999998 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_458</uri>
+            <name>tomato_458</name>
+            <pose>17.099999999999998 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_459</uri>
+            <name>tomato_459</name>
+            <pose>17.099999999999998 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_460</uri>
+            <name>tomato_460</name>
+            <pose>17.099999999999998 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_461</uri>
+            <name>tomato_461</name>
+            <pose>17.099999999999998 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_462</uri>
+            <name>tomato_462</name>
+            <pose>19.599999999999998 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_463</uri>
+            <name>tomato_463</name>
+            <pose>19.599999999999998 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_464</uri>
+            <name>tomato_464</name>
+            <pose>19.599999999999998 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_465</uri>
+            <name>tomato_465</name>
+            <pose>19.599999999999998 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_466</uri>
+            <name>tomato_466</name>
+            <pose>19.599999999999998 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_467</uri>
+            <name>tomato_467</name>
+            <pose>19.599999999999998 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_468</uri>
+            <name>tomato_468</name>
+            <pose>19.599999999999998 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_469</uri>
+            <name>tomato_469</name>
+            <pose>19.599999999999998 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_470</uri>
+            <name>tomato_470</name>
+            <pose>19.599999999999998 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_471</uri>
+            <name>tomato_471</name>
+            <pose>19.599999999999998 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_472</uri>
+            <name>tomato_472</name>
+            <pose>19.599999999999998 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_473</uri>
+            <name>tomato_473</name>
+            <pose>19.599999999999998 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_474</uri>
+            <name>tomato_474</name>
+            <pose>19.599999999999998 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_475</uri>
+            <name>tomato_475</name>
+            <pose>19.599999999999998 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_476</uri>
+            <name>tomato_476</name>
+            <pose>19.599999999999998 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_477</uri>
+            <name>tomato_477</name>
+            <pose>19.599999999999998 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_478</uri>
+            <name>tomato_478</name>
+            <pose>19.599999999999998 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_479</uri>
+            <name>tomato_479</name>
+            <pose>19.599999999999998 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_480</uri>
+            <name>tomato_480</name>
+            <pose>19.599999999999998 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_481</uri>
+            <name>tomato_481</name>
+            <pose>19.599999999999998 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_482</uri>
+            <name>tomato_482</name>
+            <pose>19.599999999999998 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_483</uri>
+            <name>tomato_483</name>
+            <pose>19.599999999999998 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_484</uri>
+            <name>tomato_484</name>
+            <pose>19.599999999999998 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_485</uri>
+            <name>tomato_485</name>
+            <pose>19.599999999999998 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_486</uri>
+            <name>tomato_486</name>
+            <pose>19.599999999999998 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_487</uri>
+            <name>tomato_487</name>
+            <pose>19.599999999999998 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_488</uri>
+            <name>tomato_488</name>
+            <pose>19.599999999999998 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_489</uri>
+            <name>tomato_489</name>
+            <pose>19.599999999999998 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_490</uri>
+            <name>tomato_490</name>
+            <pose>19.599999999999998 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_491</uri>
+            <name>tomato_491</name>
+            <pose>19.599999999999998 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_492</uri>
+            <name>tomato_492</name>
+            <pose>19.599999999999998 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_493</uri>
+            <name>tomato_493</name>
+            <pose>19.599999999999998 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_494</uri>
+            <name>tomato_494</name>
+            <pose>19.599999999999998 9.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_495</uri>
+            <name>tomato_495</name>
+            <pose>19.9 0.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_496</uri>
+            <name>tomato_496</name>
+            <pose>19.9 0.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_497</uri>
+            <name>tomato_497</name>
+            <pose>19.9 0.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_498</uri>
+            <name>tomato_498</name>
+            <pose>19.9 0.8999999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_499</uri>
+            <name>tomato_499</name>
+            <pose>19.9 1.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_500</uri>
+            <name>tomato_500</name>
+            <pose>19.9 1.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_501</uri>
+            <name>tomato_501</name>
+            <pose>19.9 1.7999999999999998 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_502</uri>
+            <name>tomato_502</name>
+            <pose>19.9 2.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_503</uri>
+            <name>tomato_503</name>
+            <pose>19.9 2.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_504</uri>
+            <name>tomato_504</name>
+            <pose>19.9 2.6999999999999997 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_505</uri>
+            <name>tomato_505</name>
+            <pose>19.9 3.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_506</uri>
+            <name>tomato_506</name>
+            <pose>19.9 3.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_507</uri>
+            <name>tomato_507</name>
+            <pose>19.9 3.5999999999999996 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_508</uri>
+            <name>tomato_508</name>
+            <pose>19.9 3.9 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_509</uri>
+            <name>tomato_509</name>
+            <pose>19.9 4.2 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_510</uri>
+            <name>tomato_510</name>
+            <pose>19.9 4.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_511</uri>
+            <name>tomato_511</name>
+            <pose>19.9 4.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_512</uri>
+            <name>tomato_512</name>
+            <pose>19.9 5.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_513</uri>
+            <name>tomato_513</name>
+            <pose>19.9 5.3999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_514</uri>
+            <name>tomato_514</name>
+            <pose>19.9 5.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_515</uri>
+            <name>tomato_515</name>
+            <pose>19.9 6.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_516</uri>
+            <name>tomato_516</name>
+            <pose>19.9 6.3 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_517</uri>
+            <name>tomato_517</name>
+            <pose>19.9 6.6 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_518</uri>
+            <name>tomato_518</name>
+            <pose>19.9 6.8999999999999995 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_519</uri>
+            <name>tomato_519</name>
+            <pose>19.9 7.199999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_520</uri>
+            <name>tomato_520</name>
+            <pose>19.9 7.5 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_521</uri>
+            <name>tomato_521</name>
+            <pose>19.9 7.8 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_522</uri>
+            <name>tomato_522</name>
+            <pose>19.9 8.1 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_523</uri>
+            <name>tomato_523</name>
+            <pose>19.9 8.4 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_524</uri>
+            <name>tomato_524</name>
+            <pose>19.9 8.7 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_525</uri>
+            <name>tomato_525</name>
+            <pose>19.9 9.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_526</uri>
+            <name>tomato_526</name>
+            <pose>19.9 9.299999999999999 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>tomato_527</uri>
+            <name>tomato_527</name>
+            <pose>19.9 9.6 0 0 0 0</pose>
+        </include>
+        
+
+        <include>
+            <pose>-1 -1 0 0 0 0</pose>
+            <uri>
+                https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/COSTAR_HUSKY_SENSOR_CONFIG_1
+            </uri>
+            <plugin filename="libignition-gazebo-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
+                <left_joint>front_left_wheel_joint</left_joint>
+                <left_joint>rear_left_wheel_joint</left_joint>
+                <right_joint>front_right_wheel_joint</right_joint>
+                <right_joint>rear_right_wheel_joint</right_joint>
+                <wheel_separation>0.684735</wheel_separation>
+                <wheel_radius>0.1651</wheel_radius>
+                <topic>/model/costar_husky_sensor_config_1/cmd_vel_relay</topic>
+                <min_velocity>-1</min_velocity>
+                <max_velocity>1</max_velocity>
+                <min_acceleration>-3</min_acceleration>
+                <max_acceleration>3</max_acceleration>
+            </plugin>
+
+            <plugin filename="libignition-gazebo-pose-publisher-system.so" name="ignition::gazebo::systems::PosePublisher">
+                <publish_link_pose>true</publish_link_pose>
+                <publish_sensor_pose>true</publish_sensor_pose>
+                <publish_collision_pose>false</publish_collision_pose>
+                <publish_visual_pose>false</publish_visual_pose>
+                <publish_nested_model_pose>true</publish_nested_model_pose>
+                <use_pose_vector_msg>true</use_pose_vector_msg>
+                <static_publisher>true</static_publisher>
+                <static_update_frequency>100</static_update_frequency>
+            </plugin>
+        </include>
+    </world>
+</sdf>
