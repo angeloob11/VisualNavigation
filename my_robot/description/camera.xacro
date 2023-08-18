@@ -2,9 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <joint name="camera_joint" type="fixed">
-        <parent link="chassis"/>
+        <parent link="arm"/>
         <child link="camera_frame"/>
-        <origin xyz="0.1 0.0 0.175" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.05 0.0 0.25" rpy="0.0 0.0 0.0"/>
     </joint>
 
     <link name="camera_frame">
@@ -38,6 +38,9 @@
             <near>0.1</near>
             <far>10</far>
           </clip>
+          <save enabled="true">
+            <path>segmentation_data/semantic_camera</path>
+          </save>
         </camera>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
