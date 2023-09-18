@@ -21,6 +21,11 @@ def generate_launch_description():
     world_path = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world')
     print(f'export IGN_GAZEBO_RESOURCE_PATH=\"{world_path}\"')
 
+    gz_resource_path = SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=[
+                                                EnvironmentVariable('IGN_GAZEBO_RESOURCE_PATH',
+                                                                    default_value=''),
+                                                                    world_path])
+
     #Incluyo gazebo  con el mundo
 
     gazebo = IncludeLaunchDescription(
@@ -49,7 +54,7 @@ def generate_launch_description():
 
 
     return LaunchDescription([
+        gz_resource_path,
         gazebo,
-        bridge,
-        #spawn_entity,
+        bridge
     ])
