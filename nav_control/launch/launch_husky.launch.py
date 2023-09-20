@@ -47,8 +47,21 @@ def generate_launch_description():
         arguments=['/model/costar_husky_sensor_config_1/cmd_vel_relay@geometry_msgs/msg/Twist@gz.msgs.Twist',
                    '/model/costar_husky_sensor_config_1/odometry@gz.msgs.Odometry',
                    '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/image@sensor_msgs/msg/Image@gz.msgs.Image',
-                   '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'],
+                   '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
+                   '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
         parameters=[{'qos_overrides./model/my_robot.subscriber.reliability': 'reliable'}],
+        output='screen'
+    )
+
+    nav_control_node = Node(
+        package="nav_control",
+        executable="nav_main",
+        parameters=[{
+          'use_sim_time': True
+        }],
+        remappings=[
+          ('output_vel', '/model/costar_husky_sensor_config_1/cmd_vel_relay')
+        ],
         output='screen'
     )
 
@@ -56,5 +69,6 @@ def generate_launch_description():
     return LaunchDescription([
         gz_resource_path,
         gazebo,
-        bridge
+        bridge,
+        nav_control_node
     ])
