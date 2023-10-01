@@ -19,6 +19,7 @@ find_package(behaviortree_cpp_v3 REQUIRED)
 find_package(action_msgs REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -39,6 +40,7 @@ set(dependencies
     action_msgs
     lifecycle_msgs
     geometry_msgs
+    sensor_msgs
     ament_index_cpp
 )
 
@@ -81,7 +83,7 @@ install(DIRECTORY include/
 
 install(
   DIRECTORY
-    launch generated behavior_tree_xml
+    launch generated behavior_tree_xml segmentation_model
   DESTINATION
     share/${PROJECT_NAME}
 )

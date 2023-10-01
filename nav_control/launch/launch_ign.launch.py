@@ -9,25 +9,23 @@ from launch.substitutions import EnvironmentVariable
 from launch_ros.actions import Node
 from pathlib import Path
 
-world_file = '$HOME/tdg_ws/src/my_robot/generated/test_03/segmentation_world/segmentation_world.sdf'
-world_path = '$HOME/tdg_ws/src/my_robot/generated/test_03/segmentation_world'
 
 #Add export IGN_GAZEBO_RESOURCE_PATH=<world_path>
 #if there's any error with URI try ign gazebo <world_file>
 
 def generate_launch_description():
 
-    pkg_name = 'my_robot'
+    pkg_name = 'nav_control'
+    WN = 3
+    world_file = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world/segmentation_world.sdf')
+    world_path = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world')
 
-    #Incluyo el anterior launch file
-    rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-        os.path.join(
-        get_package_share_directory(pkg_name), 'rsp.launch.py'
-        )]), launch_arguments={'use_sim_time': 'true'}.items()
-    )
+    gz_resource_path = SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=[
+                                                EnvironmentVariable('IGN_GAZEBO_RESOURCE_PATH',
+                                                                    default_value=''),
+                                                                    world_path])
 
-    #Incluyo gazebo  on el mundo
+    #Incluyo gazebo  con el mundo
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -37,41 +35,38 @@ def generate_launch_description():
         launch_arguments={'gz_args': f'-r {world_file}'}.items(),
     )
 
-    #Rviz 2 configuration
-    """
-    rviz = Node(
-        package='rviz2',
-        executable='rviz2',
-        arguments=[
-            '-d',
-            os.path.join(get_package_share_directory(pkg_name), )
-        ]
-    )
-    """
-
     #Spawneo al robot
-
-    spawn_entity = Node(package='ros_gz_sim', executable='create',
-                        arguments=['-topic', 'robot_description',
-                                   '-name', 'my_robot',
-                                   '-x','-1.0',
-                                   '-y','-1.0'],
-                        output = 'screen')
     
     #gz ros Bridge
+
 
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/model/my_robot/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-                   '/model/my_robot/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry'],
+        arguments=['/model/costar_husky_sensor_config_1/cmd_vel_relay@geometry_msgs/msg/Twist@gz.msgs.Twist',
+                   '/model/costar_husky_sensor_config_1/odometry@gz.msgs.Odometry',
+                   '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/image@sensor_msgs/msg/Image@gz.msgs.Image',
+                   '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
+                   '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
         parameters=[{'qos_overrides./model/my_robot.subscriber.reliability': 'reliable'}],
         output='screen'
     )
-    
+
+    img_treat_node = Node(
+        package="img_treat",
+        executable="img_treat",
+        parameters=[{
+          'use_sim_time': True
+        }],
+        remappings=[
+          ('/camera_img', '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/image')
+        ],
+        output='screen'
+    )
+
     return LaunchDescription([
-        rsp,
+        gz_resource_path,
         gazebo,
         bridge,
-        spawn_entity,
+        img_treat_node
     ])

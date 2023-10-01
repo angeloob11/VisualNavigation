@@ -60,7 +60,8 @@ def generate_launch_description():
           'use_sim_time': True
         }],
         remappings=[
-          ('output_vel', '/model/costar_husky_sensor_config_1/cmd_vel_relay')
+          ('output_vel', '/model/costar_husky_sensor_config_1/cmd_vel_relay'),
+          ('/camera_img', '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/image')
         ],
         output='screen'
     )

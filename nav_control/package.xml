@@ -3,9 +3,9 @@
 <package format="3">
   <name>nav_control</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Simulation of the husky robot with visual navigation</description>
   <maintainer email="angeloob11@gmail.com">angel</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache licence 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

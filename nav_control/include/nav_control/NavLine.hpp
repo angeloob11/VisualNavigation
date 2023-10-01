@@ -6,7 +6,9 @@
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
-
+#include "rclcpp/rclcpp.hpp"
+#include "geometry_msgs/msg/twist.hpp"
+#include "sensor_msgs/msg/image.hpp"
 
 namespace nav_control{
 
@@ -24,8 +26,14 @@ class NavLine : public BT::ActionNodeBase{
             return BT::PortsList({});
         };
 
+        void img_callback(const sensor_msgs::msg::Image::SharedPtr img);
+
     private:
-        int counter_;
+        rclcpp::Node::SharedPtr node_;
+        rclcpp::Time start_time_;
+        rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
+        rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr img_sub_;
+        sensor_msgs::msg::Image last_img_reading_;
 };
 }
 
