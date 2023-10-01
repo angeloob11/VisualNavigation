@@ -45,8 +45,9 @@ class Img_Node(Node):
         cv_img = self.cv_bridge.imgmsg_to_cv2(img, "bgr8")
         cv_img = cv2.resize(cv_img, (width, height))
         input_tensor = tf.convert_to_tensor(cv_img, dtype=tf.float32)
+        input_tensor = tf.expand_dims(input_tensor, 0)
         seg_img = model.predict(input_tensor)
-        eval_img = self.cv_bridge.cv2_to_imgms(seg_img, "bgr8")
+        eval_img = self.cv_bridge.cv2_to_imgmsg(seg_img, "bgr8")
         eval_img.header = img.header
         self.img_pub.publish(eval_img)
 
