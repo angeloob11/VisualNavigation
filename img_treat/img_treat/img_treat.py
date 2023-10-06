@@ -31,6 +31,10 @@ model = tf.keras.models.load_model(model_dir, custom_objects={'mean_iou':mean_io
 
 width = 224
 height = 224
+colormap = {
+    0: (255, 0, 0),   # Background: red
+    1: (255, 0, 255), # Road: pink
+}
 
 class Img_Node(Node):
     def __init__(self):
@@ -40,17 +44,28 @@ class Img_Node(Node):
         self.img_pub = self.create_publisher(Image, "/seg_img", 100)
         self.cv_bridge = CvBridge()
     
-    def img_callback(self, img):
-        
-        cv_img = self.cv_bridge.imgmsg_to_cv2(img, "bgr8")
-        cv_img = cv2.resize(cv_img, (width, height))
-        input_tensor = tf.convert_to_tensor(cv_img, dtype=tf.float32)
+    def num_to_rgb(self, num_arr, color_map=colormap ):
+        single_layer = np.squeeze(num_arr)
+        output = np.zeros(num_arr.shape[:2]+(3,))
+        for k in color_map.keys():
+            output[single_layer==k] = color_map[k]
+        return np.uint8(output)
+    
+    def img_callback(self, img_msg):
+
+        img = self.cv_bridge.imgmsg_to_cv2(img_msg, "bgr8")
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)     
+        img = cv2.resize(img, (width, height))   
+        input_tensor = tf.convert_to_tensor(img, dtype=tf.float32)
         input_tensor = tf.expand_dims(input_tensor, 0)
-        seg_img = model.predict(input_tensor)
-        
-        eval_img = self.cv_bridge.cv2_to_imgmsg(seg_img, "bgr8")
-        eval_img.header = img.header
+        seg_img = (model.predict(input_tensor)).astype('float32')
+        seg_img = seg_img.argmax(-1)
+        rgb_img = self.num_to_rgb(seg_img[0])
+        eval_img = self.cv_bridge.cv2_to_imgmsg(rgb_img, "bgr8")
+        eval_img.header = img_msg.header
         self.img_pub.publish(eval_img)
+    
+
 
 def main(args=None):
     rclpy.init(args=args)
