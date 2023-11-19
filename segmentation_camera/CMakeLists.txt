@@ -25,7 +25,7 @@ endif()
 
 install(
   DIRECTORY
-    launch description generated
+    launch description
   DESTINATION
     share/${PROJECT_NAME}
 )

@@ -17,9 +17,10 @@ from pathlib import Path
 def generate_launch_description():
 
     pkg_name = 'segmentation_camera'
-    WN = 3
-    world_file = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world/segmentation_world.sdf')
-    world_path = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world')
+    world_pkg = 'world_gen'
+    WN = 4
+    world_file = os.path.join(get_package_share_directory(world_pkg), f'generated/no_robot/test_0{WN}/segmentation_world/segmentation_world.sdf')
+    world_path = os.path.join(get_package_share_directory(world_pkg), f'generated//no_robot/test_0{WN}/segmentation_world')
 
     gz_resource_path = SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=[
                                                 EnvironmentVariable('IGN_GAZEBO_RESOURCE_PATH',
