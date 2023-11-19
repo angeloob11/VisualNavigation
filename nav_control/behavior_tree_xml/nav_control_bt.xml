@@ -10,8 +10,10 @@
                 </Fallback>
                 <Sequence>
                     <Action ID="GetLine"/>
-                    <Action ID="NavLine"/>
-                    <Action ID="ChangeLine"/>
+                    <Sequence>
+                        <Action ID="NavLine"/>
+                        <Action ID="ChangeLine"/>
+                    </Sequence>
                 </Sequence>
             </ReactiveSequence>
         </KeepRunningUntilFailure>

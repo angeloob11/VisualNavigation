@@ -83,7 +83,7 @@ install(DIRECTORY include/
 
 install(
   DIRECTORY
-    launch generated behavior_tree_xml segmentation_model
+    launch behavior_tree_xml
   DESTINATION
     share/${PROJECT_NAME}
 )
