@@ -29,7 +29,6 @@ namespace nav_control{
     void 
     NavLine::img_callback(const sensor_msgs::msg::Image::SharedPtr img){
         last_img_reading_ = *img;
-        std::cout << "Received a img of " << last_img_reading_.height <<"x"<< last_img_reading_.width <<std::endl;       
     }
     
 
