@@ -7,6 +7,7 @@
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
 #include "geometry_msgs/msg/twist.hpp"
+#include "std_msgs/msg/bool.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 
@@ -31,6 +32,7 @@ class ChangeLine : public BT::ActionNodeBase{
         rclcpp::Node::SharedPtr node_;
         rclcpp::Time start_time_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
+        rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr status_pub_;
         
 
 

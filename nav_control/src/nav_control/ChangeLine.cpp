@@ -15,6 +15,7 @@ namespace nav_control{
     : BT::ActionNodeBase(xml_tag_name, conf){
         config().blackboard->get("node", node_);
         vel_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("/output_vel", 100); 
+        status_pub_ = node_->create_publisher<std_msgs::msg::Bool>("/status", 100); 
     }
 
     void ChangeLine::halt(){
@@ -46,10 +47,11 @@ namespace nav_control{
             }
         }
         else{
+            std_msgs::msg::Bool success_status;
+            success_status.data = true;
+            status_pub_->publish(success_status);
             return BT::NodeStatus::SUCCESS;
-        }
-        
-          
+        }          
     }
 }
 

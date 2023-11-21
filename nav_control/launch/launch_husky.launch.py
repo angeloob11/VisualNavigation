@@ -16,11 +16,11 @@ from pathlib import Path
 def generate_launch_description():
 
     pkg_name = 'nav_control'
-    WN = 3
-    world_file = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world/segmentation_world.sdf')
-    world_path = os.path.join(get_package_share_directory(pkg_name), f'generated/test_0{WN}/segmentation_world')
-    print(f'export IGN_GAZEBO_RESOURCE_PATH=\"{world_path}\"')
-
+    world_pkg = 'world_gen'
+    WN = 4
+    world_file = os.path.join(get_package_share_directory(world_pkg), f'generated/test_0{WN}/segmentation_world/segmentation_world.sdf')
+    world_path = os.path.join(get_package_share_directory(world_pkg), f'generated/test_0{WN}/segmentation_world')
+    
     gz_resource_path = SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=[
                                                 EnvironmentVariable('IGN_GAZEBO_RESOURCE_PATH',
                                                                     default_value=''),
@@ -36,8 +36,6 @@ def generate_launch_description():
         launch_arguments={'gz_args': f'-r {world_file}'}.items(),
     )
 
-    #Spawneo al robot
-    
     #gz ros Bridge
 
 

@@ -10,17 +10,15 @@
                 </Fallback>
                 <Sequence>
                     <Action ID="GetLine"/>
-                    <Sequence>
-                        <Action ID="NavLine"/>
-                        <Action ID="ChangeLine"/>
-                    </Sequence>
+                    <Action ID="NavLine"/>
+                    <Action ID="ChangeLine"/>
                 </Sequence>
             </ReactiveSequence>
         </KeepRunningUntilFailure>
     </BehaviorTree>
     <!-- ////////// -->
     <TreeNodesModel>
-        <Action ID="BatteryChecker"/>
+        <Condition ID="BatteryChecker"/>
         <Action ID="ChangeLine"/>
         <Action ID="GetLine"/>
         <Action ID="GetWaypoint">
