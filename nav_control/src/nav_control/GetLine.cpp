@@ -41,10 +41,14 @@ namespace nav_control{
         geometry_msgs::msg::Twist vel_msg;
         auto elpased = node_->now() - start_time_;
 
-        if (elpased < rclcpp::Duration(7.1, 0)){
-            if (elpased < rclcpp::Duration(3.14, 0)){
-                vel_msg.angular.z = 0.5;
+        if (elpased < rclcpp::Duration(10.2415, 0)){
+            if (elpased < rclcpp::Duration(5.1, 0)){
                 vel_msg.linear.x = 0.5;
+                vel_pub_->publish(vel_msg);
+                return BT::NodeStatus::RUNNING;
+            }
+            else if (elpased < rclcpp::Duration(8.2415, 0)){
+                vel_msg.angular.z = 0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }

@@ -38,7 +38,7 @@ namespace nav_control{
     BT::NodeStatus NavLine::tick(){
         std::cout<<"Nav Line Node Active"<< std::endl;
         
-        //acá es donde proceso la imagen con el cosito jajaja 
+        float lenght = 3.0;
         geometry_msgs::msg::Twist vel_msg;
         vel_msg.linear.x = 0.5;
         vel_pub_->publish(vel_msg);
@@ -50,7 +50,7 @@ namespace nav_control{
 
         auto elpased = node_->now() - start_time_;
         
-        if (elpased < rclcpp::Duration(5, 0))
+        if (elpased < rclcpp::Duration(lenght/0.5, 0))
         {
             return BT::NodeStatus::RUNNING;
         }
