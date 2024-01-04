@@ -9,6 +9,7 @@
 namespace nav_control{
 
     using namespace std::placeholders;
+    bool GetLine::status_ = false;
 
     GetLine::GetLine(
         const std::string & xml_tag_name,
@@ -17,19 +18,15 @@ namespace nav_control{
     : BT::ActionNodeBase(xml_tag_name, conf){
         config().blackboard->get("node", node_);
         vel_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("/output_vel", 100); 
-        status_sub_ = node_->create_subscription<std_msgs::msg::Bool>("/status", 100, std::bind(&GetLine::status_callback, this, _1));
-    }
-
-    void GetLine::status_callback(const std_msgs::msg::Bool::SharedPtr status){
-        last_status_msg = *status;
     }
 
     void GetLine::halt(){
     }
 
     BT::NodeStatus GetLine::tick(){
-
-        if(last_status_msg.data == true){
+        
+        std::cout<<status_<<std::endl;
+        if(status_){
             return BT::NodeStatus::SUCCESS;
         }
         
@@ -59,6 +56,7 @@ namespace nav_control{
             }   
         }
         else{
+            status_ = true;
             return BT::NodeStatus::SUCCESS;
        }
     }

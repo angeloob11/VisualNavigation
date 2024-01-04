@@ -32,10 +32,7 @@ class ChangeLine : public BT::ActionNodeBase{
         rclcpp::Node::SharedPtr node_;
         rclcpp::Time start_time_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
-        rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr status_pub_;
-        
-
-
+        static int direction_;
 };
 }
 

@@ -8,6 +8,9 @@
 #include "rclcpp/rclcpp.hpp"
 
 namespace nav_control{
+
+    int ChangeLine::direction_ = -1;
+
     ChangeLine::ChangeLine(
         const std::string & xml_tag_name,
         const BT::NodeConfiguration & conf
@@ -15,11 +18,9 @@ namespace nav_control{
     : BT::ActionNodeBase(xml_tag_name, conf){
         config().blackboard->get("node", node_);
         vel_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("/output_vel", 100); 
-        status_pub_ = node_->create_publisher<std_msgs::msg::Bool>("/status", 100); 
     }
 
     void ChangeLine::halt(){
-        std::cout<<"ChangeLine halt"<<std::endl;
     }
 
     BT::NodeStatus ChangeLine::tick(){
@@ -39,7 +40,7 @@ namespace nav_control{
                 return BT::NodeStatus::RUNNING;
             }
             else if (elpased < rclcpp::Duration(4.1415, 0)){
-                vel_msg.angular.z = -0.5;
+                vel_msg.angular.z = direction_*0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
@@ -49,7 +50,7 @@ namespace nav_control{
                 return BT::NodeStatus::RUNNING;
             }
             else if (elpased < rclcpp::Duration(12.8831, 0)){
-                vel_msg.angular.z = -0.5;
+                vel_msg.angular.z = direction_*0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
@@ -60,9 +61,7 @@ namespace nav_control{
             }
         }
         else{
-            std_msgs::msg::Bool success_status;
-            success_status.data = true;
-            status_pub_->publish(success_status);
+            direction_ *= -1;
             return BT::NodeStatus::SUCCESS;
         }          
     }

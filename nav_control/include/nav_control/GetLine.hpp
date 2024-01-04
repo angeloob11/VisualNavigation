@@ -25,14 +25,12 @@ class GetLine : public BT::ActionNodeBase{
         static BT::PortsList providedPorts(){
             return BT::PortsList({});
         };
-        void status_callback(const std_msgs::msg::Bool::SharedPtr status);
 
     private:
         rclcpp::Node::SharedPtr node_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
-        rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr status_sub_;
-        std_msgs::msg::Bool last_status_msg;
         rclcpp::Time start_time_;
+        static bool status_;
 };
 }
 

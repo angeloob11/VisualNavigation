@@ -18,7 +18,7 @@ def generate_launch_description():
 
     pkg_name = 'segmentation_camera'
     world_pkg = 'world_gen'
-    WN = 4
+    WN = 6
     world_file = os.path.join(get_package_share_directory(world_pkg), f'generated/no_robot/test_0{WN}/segmentation_world/segmentation_world.sdf')
     world_path = os.path.join(get_package_share_directory(world_pkg), f'generated//no_robot/test_0{WN}/segmentation_world')
 
