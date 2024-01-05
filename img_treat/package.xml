@@ -10,7 +10,7 @@
   <depend>rclpy</depend>
   <depend>python3-numpy</depend>
   <depend>python3-opencv</depend>
-  <depend>python3-tensorflow</depend>
+  <depend>python3-scipy</depend>
   <depend>sensor_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>os</depend>

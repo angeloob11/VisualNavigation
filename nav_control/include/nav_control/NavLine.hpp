@@ -8,7 +8,8 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
-#include "sensor_msgs/msg/image.hpp"
+#include "std_msgs/msg/bool.hpp"
+#include "std_msgs/msg/float64.hpp"
 
 namespace nav_control{
 
@@ -26,14 +27,18 @@ class NavLine : public BT::ActionNodeBase{
             return BT::PortsList({});
         };
 
-        void img_callback(const sensor_msgs::msg::Image::SharedPtr img);
+        void theta_callback(const std_msgs::msg::Float64::SharedPtr theta);
+        void status_callback(const std_msgs::msg::Bool::SharedPtr status_node);
+        const float THETA_MAX = 1.57079;
+        const float OMEGA_MAX = 2.92083;
 
     private:
         rclcpp::Node::SharedPtr node_;
-        rclcpp::Time start_time_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
-        rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr img_sub_;
-        sensor_msgs::msg::Image last_img_reading_;
+        rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr theta_sub_;
+        rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr status_sub_;
+        std_msgs::msg::Float64 last_theta_reading;
+        std_msgs::msg::Bool last_status_reading;
 };
 }
 

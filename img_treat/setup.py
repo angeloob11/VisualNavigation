@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'img_treat = img_treat.img_treat:main'
+            'img_treat = img_treat.img_treat:main',
+            'img_treat_CV = img_treat.img_treat_cv:main'
         ],
     },
 )

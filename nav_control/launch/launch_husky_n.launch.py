@@ -10,9 +10,6 @@ from launch_ros.actions import Node
 from pathlib import Path
 
 
-#Add export IGN_GAZEBO_RESOURCE_PATH=<world_path>
-#if there's any error with URI try ign gazebo <world_file>
-
 def generate_launch_description():
 
     nav_control_node = Node(
@@ -28,7 +25,20 @@ def generate_launch_description():
         output='screen'
     )
 
+    img_treat_node = Node(
+        package="img_treat",
+        executable="img_treat_CV",
+        parameters=[{
+          'use_sim_time': True
+        }],
+        remappings=[
+          ('/camera_img', '/world/field/model/costar_husky_sensor_config_1/link/base_link/sensor/camera_front/image')
+        ],
+        output='screen'
+    )
+
 
     return LaunchDescription([
-        nav_control_node
+        nav_control_node,
+        img_treat_node
     ])

@@ -17,7 +17,7 @@ def generate_launch_description():
 
     pkg_name = 'nav_control'
     world_pkg = 'world_gen'
-    WN = 3
+    WN = 4
     world_file = os.path.join(get_package_share_directory(world_pkg), f'generated/test_0{WN}/segmentation_world/segmentation_world.sdf')
     world_path = os.path.join(get_package_share_directory(world_pkg), f'generated/test_0{WN}/segmentation_world')
 
@@ -55,7 +55,7 @@ def generate_launch_description():
 
     img_treat_node = Node(
         package="img_treat",
-        executable="img_treat",
+        executable="img_treat_CV",
         parameters=[{
           'use_sim_time': True
         }],
