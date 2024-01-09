@@ -55,7 +55,7 @@
         <include>
             <pose>-1 -1 0 0 0 0</pose>
             <uri>
-                https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/COSTAR_HUSKY_SENSOR_CONFIG_1
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/MARBLE_HUSKY_SENSOR_CONFIG_1
             </uri>
             <plugin filename="libignition-gazebo-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
                 <left_joint>front_left_wheel_joint</left_joint>
@@ -64,7 +64,7 @@
                 <right_joint>rear_right_wheel_joint</right_joint>
                 <wheel_separation>0.684735</wheel_separation>
                 <wheel_radius>0.1651</wheel_radius>
-                <topic>/model/costar_husky_sensor_config_1/cmd_vel_relay</topic>
+                <topic>/model/marble_husky_sensor_config_1/cmd_vel_relay</topic>
                 <min_velocity>-1</min_velocity>
                 <max_velocity>1</max_velocity>
                 <min_acceleration>-3</min_acceleration>

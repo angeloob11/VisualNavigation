@@ -30,7 +30,7 @@ class NavLine : public BT::ActionNodeBase{
         void theta_callback(const std_msgs::msg::Float64::SharedPtr theta);
         void status_callback(const std_msgs::msg::Bool::SharedPtr status_node);
         const float THETA_MAX = 1.57079;
-        const float OMEGA_MAX = 2.92083;
+        const float OMEGA_MAX = 0.5;
 
     private:
         rclcpp::Node::SharedPtr node_;

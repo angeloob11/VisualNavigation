@@ -28,15 +28,18 @@ class Img_Node_CV(Node):
         mins = smoothed[indices]
         min_indx = np.where(mins == min(mins))[0]
         return indices[min_indx], np.mean(mins)
+
+
     
     def img_callback(self, img_msg):
         #READ THE IMAGE WITH OPENCV BRIDGE
         img = self.cv_bridge.imgmsg_to_cv2(img_msg, "bgr8")
         #APPLY CANNY AND OTHER OPERATIONS ANG GET THE VECTOR DATA
         x, status = self.img_treatment(img)
-        y = 450
-        dy = 600 - y
-        dx = x - 400
+        height = img.shape[0]
+        width = img.shape[1]
+        dy = 0.25*height
+        dx = x - 0.5*width
         theta = np.arctan2(dx,dy)
         #PUBLIS THE DATA
         theta_msg = Float64()
@@ -46,7 +49,6 @@ class Img_Node_CV(Node):
             finish_msg.data = True
         else:
             finish_msg.data = False
-
         self.theta_pub.publish(theta_msg)
         self.finish_pub.publish(finish_msg)
 
