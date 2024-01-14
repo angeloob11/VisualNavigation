@@ -41,7 +41,7 @@ namespace nav_control{
     }
 
     BT::NodeStatus NavLine::tick(){
-        std::cout<<"Nav Line Node Active"<< std::endl;
+        std::cout<<"Nav Line Node Active"<< last_theta_reading.data << std::endl;
 
         geometry_msgs::msg::Twist vel_msg;
         

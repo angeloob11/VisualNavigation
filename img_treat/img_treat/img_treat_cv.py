@@ -21,13 +21,19 @@ class Img_Node_CV(Node):
         edges = cv2.Canny(img, 100, 200, None, 3, cv2.DIST_L2)
         normalized = cv2.normalize(edges, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX)
         column_intensity = normalized.sum(axis=0)
-        window_size = 30
+        window_size = 9
         window = np.ones((window_size,)) / window_size
         smoothed = np.convolve(column_intensity, window, mode="valid")
         indices = signal.argrelmin(smoothed)[0]
         mins = smoothed[indices]
-        min_indx = np.where(mins == min(mins))[0]
-        return indices[min_indx], np.mean(mins)
+
+        x_filter = indices[smoothed[indices]<20]
+        if x_filter.shape[0]>0:
+            x_3 = (x_filter[0] + x_filter[-1])*0.5
+        else: 
+            x_3 = 0
+
+        return x_3, np.mean(mins)
 
 
     
@@ -43,7 +49,7 @@ class Img_Node_CV(Node):
         theta = np.arctan2(dx,dy)
         #PUBLIS THE DATA
         theta_msg = Float64()
-        theta_msg.data = float(theta[0])
+        theta_msg.data = float(theta)
         finish_msg = Bool()
         if(status < 20):
             finish_msg.data = True

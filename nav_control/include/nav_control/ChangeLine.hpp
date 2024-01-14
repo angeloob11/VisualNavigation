@@ -26,6 +26,10 @@ class ChangeLine : public BT::ActionNodeBase{
         static BT::PortsList providedPorts(){
             return BT::PortsList({});
         };
+        const double PI = 3.141592;
+        const double D1 = 2.5;
+        const double D2 = 2.8;
+        const double D3 = 0.5;
 
     private:
         

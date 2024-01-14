@@ -33,23 +33,24 @@ namespace nav_control{
         geometry_msgs::msg::Twist vel_msg;
         auto elpased = node_->now() - start_time_;
 
-        if (elpased < rclcpp::Duration(13.8831, 0)){
-            if(elpased < rclcpp::Duration(1, 0)){
+        if (elpased < rclcpp::Duration(2*(D1+D2+D3+PI), 0)){
+    
+            if(elpased < rclcpp::Duration(2*D1, 0)){
                 vel_msg.linear.x = 0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
-            else if (elpased < rclcpp::Duration(4.1415, 0)){
+            else if (elpased < rclcpp::Duration(2*D1+PI, 0)){
                 vel_msg.angular.z = direction_*0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
-            else if (elpased < rclcpp::Duration(9.7415, 0)){
+            else if (elpased < rclcpp::Duration(2*(D1+D2)+PI, 0)){
                 vel_msg.linear.x = 0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
-            else if (elpased < rclcpp::Duration(12.8831, 0)){
+            else if (elpased < rclcpp::Duration(2*(D1+D2+PI), 0)){
                 vel_msg.angular.z = direction_*0.5;
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
@@ -59,6 +60,7 @@ namespace nav_control{
                 vel_pub_->publish(vel_msg);
                 return BT::NodeStatus::RUNNING;
             }
+
         }
         else{
             direction_ *= -1;
