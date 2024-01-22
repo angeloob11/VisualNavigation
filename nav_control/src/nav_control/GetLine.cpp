@@ -25,7 +25,6 @@ namespace nav_control{
 
     BT::NodeStatus GetLine::tick(){
         
-        std::cout<<status_<<std::endl;
         if(status_){
             return BT::NodeStatus::SUCCESS;
         }

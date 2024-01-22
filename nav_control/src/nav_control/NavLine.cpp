@@ -2,12 +2,14 @@
 #include <string>
 #include <set>
 #include <algorithm>
+#include <fstream>
 #include "nav_control/NavLine.hpp"
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "std_msgs/msg/bool.hpp"
 #include "std_msgs/msg/float64.hpp"
+
 
 namespace nav_control{
 
@@ -41,7 +43,8 @@ namespace nav_control{
     }
 
     BT::NodeStatus NavLine::tick(){
-        std::cout<<"Nav Line Node Active"<< last_theta_reading.data << std::endl;
+
+        std::cout<<"Nav Line Node Active" <<std::endl;
 
         geometry_msgs::msg::Twist vel_msg;
         
@@ -50,9 +53,16 @@ namespace nav_control{
             vel_msg.angular.z = -1 * last_theta_reading.data * OMEGA_MAX / THETA_MAX;
             vel_msg.linear.x = 0.5;
             vel_pub_->publish(vel_msg);
+            CSVfile.open("theta_data.csv", std::ios::out | std::ios::app);
+            CSVfile << last_theta_reading.data <<"\n";
+            CSVfile.close();
+
             return BT::NodeStatus::RUNNING;
         }
         else{
+            CSVfile.open("theta_data.csv", std::ios::out | std::ios::app);
+            CSVfile << "LINE FINISH \n";
+            CSVfile.close();
             return BT::NodeStatus::SUCCESS;
         }        
     }

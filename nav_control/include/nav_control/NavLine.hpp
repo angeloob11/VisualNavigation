@@ -3,7 +3,7 @@
 
 
 #include <string>
-
+#include <fstream>
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
 #include "rclcpp/rclcpp.hpp"
@@ -39,6 +39,8 @@ class NavLine : public BT::ActionNodeBase{
         rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr status_sub_;
         std_msgs::msg::Float64 last_theta_reading;
         std_msgs::msg::Bool last_status_reading;
+
+        std::ofstream CSVfile;
 };
 }
 
