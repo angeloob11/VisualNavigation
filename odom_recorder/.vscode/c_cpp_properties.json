@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/angel/tdg_ws/install/nav_control/include/**",
+        "/home/angel/tdg_ws/install/husky_base/include/**",
+        "/home/angel/tdg_ws/install/husky_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/angel/tdg_ws/src/nav_control/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

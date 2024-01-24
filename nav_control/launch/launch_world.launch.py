@@ -43,7 +43,7 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/model/marble_husky_sensor_config_1/cmd_vel_relay@geometry_msgs/msg/Twist@gz.msgs.Twist',
-                   '/model/marble_husky_sensor_config_1/odometry@gz.msgs.Odometry',
+                   '/model/marble_husky_sensor_config_1/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry',
                    '/world/field/model/marble_husky_sensor_config_1/link/tilt_gimbal_link/sensor/camera_pan_tilt/image@sensor_msgs/msg/Image@gz.msgs.Image',
                    '/world/field/model/marble_husky_sensor_config_1/link/tilt_gimbal_link/sensor/camera_pan_tilt/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
                    '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
