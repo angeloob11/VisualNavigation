@@ -41,6 +41,7 @@ class NavLine : public BT::ActionNodeBase{
         std_msgs::msg::Bool last_status_reading;
 
         std::ofstream CSVfile;
+        static int n_line_;
 };
 }
 

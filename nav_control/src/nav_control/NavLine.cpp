@@ -14,6 +14,7 @@
 namespace nav_control{
 
     using namespace std::placeholders;
+    int NavLine::n_line_ = 0;
 
     NavLine::NavLine(
         const std::string & xml_tag_name,
@@ -53,16 +54,17 @@ namespace nav_control{
             vel_msg.angular.z = -1 * last_theta_reading.data * OMEGA_MAX / THETA_MAX;
             vel_msg.linear.x = 0.5;
             vel_pub_->publish(vel_msg);
-            CSVfile.open("theta_data.csv", std::ios::out | std::ios::app);
+            std::string File_Name = "theta_data_";
+            File_Name += std::to_string(n_line_);
+            File_Name += ".csv";
+            CSVfile.open(File_Name, std::ios::out | std::ios::app);
             CSVfile << last_theta_reading.data <<"\n";
             CSVfile.close();
 
             return BT::NodeStatus::RUNNING;
         }
         else{
-            CSVfile.open("theta_data.csv", std::ios::out | std::ios::app);
-            CSVfile << "LINE FINISH \n";
-            CSVfile.close();
+            n_line_++;
             return BT::NodeStatus::SUCCESS;
         }        
     }

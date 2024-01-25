@@ -11,7 +11,7 @@ class odom_recorder(Node):
         super().__init__('odom_recorder_node')
 
         self.odom_sub = self.create_subscription(Odometry, '/model/marble_husky_sensor_config_1/odometry', self.odom_callback, qos_profile_system_default)
-        with open('Odom_writer', 'w') as file:
+        with open('Odom_writer.csv', 'w') as file:
             file_writer = csv.writer(file)
             file_writer.writerow(row_header)
         
@@ -19,7 +19,7 @@ class odom_recorder(Node):
     def odom_callback(self, msg):
         HOLA = Odometry()
         POSITION = [msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z]
-        with open('Odom_writer', 'a+') as file:
+        with open('Odom_writer.csv', 'a+') as file:
             file_writer = csv.writer(file)
             file_writer.writerow(POSITION)
             print('COORDENADAS ESCRITAS')
