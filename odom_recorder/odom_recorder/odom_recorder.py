@@ -17,7 +17,6 @@ class odom_recorder(Node):
         
 
     def odom_callback(self, msg):
-        HOLA = Odometry()
         POSITION = [msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z]
         with open('Odom_writer.csv', 'a+') as file:
             file_writer = csv.writer(file)

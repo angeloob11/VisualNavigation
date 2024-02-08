@@ -47,8 +47,9 @@ def generate_launch_description():
                    '/world/field/model/marble_husky_sensor_config_1/link/tilt_gimbal_link/sensor/camera_pan_tilt/image@sensor_msgs/msg/Image@gz.msgs.Image',
                    '/world/field/model/marble_husky_sensor_config_1/link/tilt_gimbal_link/sensor/camera_pan_tilt/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
                    '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
-                   '/model/marble_husky_sensor_config_1/pose@tf2_msgs/TFMessage[ignition.msgs.Pose_V',
-                   '/model/marble_husky_sensor_config_1/pose_static@tf2_msgs/TFMessage[ignition.msgs.Pose_V'],
+                   '/model/marble_husky_sensor_config_1/pose@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V',
+                   '/model/marble_husky_sensor_config_1/pose_static@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V',
+                   '/world/field/dynamic_pose/info@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V',],
         parameters=[{'qos_overrides./model/marble_husky_sensor_config_1.subscriber.reliability': 'reliable'}],
         output='screen'
     )

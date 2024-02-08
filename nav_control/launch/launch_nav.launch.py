@@ -45,10 +45,19 @@ def generate_launch_description():
         }],
         output='screen'
     )
+    pose_recorder_node = Node(
+        package="odom_recorder",
+        executable="pose_recorder",
+        parameters=[{
+          'use_sim_time': True
+        }],
+        output='screen'
+    )
 
 
     return LaunchDescription([
         nav_control_node,
         img_treat_node,
-        odom_recorder_node
+        odom_recorder_node,
+        pose_recorder_node
     ])

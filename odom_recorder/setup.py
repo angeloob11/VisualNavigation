@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'odom_recorder = odom_recorder.odom_recorder:main',
+            'pose_recorder = odom_recorder.pose_recorder:main',
         ],
     },
 )
