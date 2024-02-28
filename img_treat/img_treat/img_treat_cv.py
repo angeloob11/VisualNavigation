@@ -8,16 +8,19 @@ import cv2
 import numpy as np
 from scipy import signal
 
+#CREATE A NODE CLASS 
 class Img_Node_CV(Node):
     def __init__(self):
         super().__init__('img_node')
 
+        #SUBSCRIPTION TO THE IMG TOPIC AND PUBLISHES THETA AND FINISH TOPICS
         self.img_sub = self.create_subscription(Image, "/camera_img", self.img_callback, qos_profile_sensor_data)
         self.theta_pub = self.create_publisher(Float64, "/theta", 100)
         self.finish_pub = self.create_publisher(Bool, "/finish", 100)
         self.cv_bridge = CvBridge()
 
     def img_treatment(self, img):
+        #OPEN CV INTEGRATION WITH ROS APLIYING CANNY FUNCITON
         edges = cv2.Canny(img, 100, 200, None, 3, cv2.DIST_L2)
         normalized = cv2.normalize(edges, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX)
         column_intensity = normalized.sum(axis=0)
